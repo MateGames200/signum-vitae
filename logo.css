@@ -1,0 +1,10 @@
+.mark {
+  display: block;
+  width: min(390px, 76vw);
+  height: auto;
+  margin: 10px 0 28px;
+}
+
+@media (max-width: 660px) {
+  .mark { width: min(310px, 80vw); margin-bottom: 24px; }
+}
