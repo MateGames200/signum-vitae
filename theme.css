@@ -1,0 +1,31 @@
+.nav-actions { display: flex; align-items: center; gap: 22px; }
+
+.theme-switch { display: flex; align-items: center; gap: 3px; padding: 3px; border: 1px solid #d6dfeb; background: #fff; border-radius: 999px; }
+
+.theme-button { width: 28px; height: 28px; border: 0; border-radius: 50%; display: grid; place-items: center; background: transparent; color: #60738a; cursor: pointer; font-size: 16px; line-height: 1; }
+
+.theme-button:hover { color: var(--navy); background: #edf3f9; }
+.theme-button.is-active { color: #fff; background: var(--navy); }
+.theme-button:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
+
+html[data-theme="dark"] { --cream: #0a1524; --light-blue: #10243d; --ink: #edf4fa; --muted: #bfcede; }
+html[data-theme="dark"] body { background: var(--cream); color: var(--ink); }
+html[data-theme="dark"] .hero { background: radial-gradient(circle at 76% 30%, #1e4b77 0, rgba(30, 75, 119, .3) 23%, transparent 48%), #09172a; }
+html[data-theme="dark"] .hero::before, html[data-theme="dark"] .hero::after { border-color: rgba(161, 199, 235, .18); }
+html[data-theme="dark"] .mark { filter: none; }
+html[data-theme="dark"] .nav-links a, html[data-theme="dark"] .brand { color: #edf4fa; }
+html[data-theme="dark"] .nav-links a:hover { color: var(--orange); }
+html[data-theme="dark"] .theme-switch { border-color: #47617e; background: #0d2138; }
+html[data-theme="dark"] .theme-button { color: #bed0e0; }
+html[data-theme="dark"] .theme-button:hover { background: #193a5c; color: #fff; }
+html[data-theme="dark"] .theme-button.is-active { background: var(--orange); color: #1b2230; }
+html[data-theme="dark"] .about { background: var(--light-blue); }
+html[data-theme="dark"] .heading p, html[data-theme="dark"] .photo-note { color: var(--muted); }
+html[data-theme="dark"] .portrait { background: #132b47; border-color: #87a8c8; box-shadow: inset 0 0 0 8px #132b47, inset 0 0 0 9px var(--orange); }
+html[data-theme="dark"] .team-grid h3 { color: #edf4fa; }
+html[data-theme="dark"] footer { background: #06101c; }
+
+@media (max-width: 660px) {
+  .nav-actions { position: relative; gap: 10px; }
+  .nav-actions .nav-links { right: 0; top: 38px; }
+}

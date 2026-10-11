@@ -10,13 +10,20 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="logo.css" />
+    <link rel="stylesheet" href="theme.css" />
   </head>
   <body>
     <header class="hero" id="inicio">
       <nav class="nav container" aria-label="Navegación principal">
         <a class="brand" href="#inicio"><span>⌁</span> SIGNUM VITAE</a>
         <button class="menu-button" aria-label="Abrir menú" aria-expanded="false">☰</button>
-        <div class="nav-links"><a href="#quienes-somos">Quiénes somos</a><a href="#que-hacemos">Qué hacemos</a></div>
+        <div class="nav-actions">
+          <div class="nav-links"><a href="#quienes-somos">Quiénes somos</a><a href="#que-hacemos">Qué hacemos</a></div>
+          <div class="theme-switch" role="group" aria-label="Elegir apariencia del sitio">
+            <button class="theme-button is-active" type="button" data-theme-choice="light" aria-label="Activar modo claro" title="Modo claro">☀</button>
+            <button class="theme-button" type="button" data-theme-choice="dark" aria-label="Activar modo oscuro" title="Modo oscuro">☾</button>
+          </div>
+        </div>
       </nav>
       <div class="hero-content container">
         <img class="mark" src="signum-vitae-logo-transparent.png" alt="Logotipo de Signum Vitae" />
