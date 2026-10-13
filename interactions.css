@@ -1,0 +1,25 @@
+.scroll-progress { position: fixed; inset: 0 0 auto; z-index: 20; height: 3px; background: transparent; pointer-events: none; }
+.scroll-progress span { display: block; width: 0; height: 100%; background: var(--orange); box-shadow: 0 0 12px rgba(255, 134, 37, .7); transition: width .1s linear; }
+
+.nav-links a { position: relative; transition: color .2s ease; }
+.nav-links a::after { content: ""; position: absolute; right: 0; bottom: -8px; left: 0; height: 2px; background: var(--orange); transform: scaleX(0); transform-origin: right; transition: transform .24s ease; }
+.nav-links a:hover::after, .nav-links a.is-current::after { transform: scaleX(1); transform-origin: left; }
+.nav-links a.is-current { color: var(--orange); }
+
+.button, .theme-button, .portrait, .features span { transition: transform .22s ease, box-shadow .22s ease, background-color .22s ease, color .22s ease; }
+.button:hover { transform: translateY(-3px); box-shadow: 0 11px 22px rgba(11, 50, 104, .2); }
+.theme-button:active, .button:active { transform: scale(.94); }
+.team-grid article { transition: transform .25s ease; }
+.team-grid article:hover { transform: translateY(-7px); }
+.team-grid article:hover .portrait { box-shadow: 0 10px 22px rgba(11, 50, 104, .18), inset 0 0 0 8px var(--cream), inset 0 0 0 9px var(--orange); }
+.features span:hover { transform: translateY(-3px); background: rgba(255, 134, 37, .12); }
+
+.js-enabled .reveal { opacity: 0; transform: translateY(24px); transition: opacity .65s ease, transform .65s cubic-bezier(.2, .72, .25, 1); }
+.js-enabled .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+html[data-theme="dark"] .team-grid article:hover .portrait { box-shadow: 0 10px 24px rgba(0, 0, 0, .36), inset 0 0 0 8px #132b47, inset 0 0 0 9px var(--orange); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+  .js-enabled .reveal { opacity: 1; transform: none; }
+}

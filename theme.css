@@ -14,6 +14,7 @@
 html[data-theme="dark"] { --cream: #0a1524; --light-blue: #10243d; --ink: #edf4fa; --muted: #bfcede; }
 html[data-theme="dark"] body { background: var(--cream); color: var(--ink); }
 html[data-theme="dark"] .hero { background: radial-gradient(circle at 76% 30%, #1e4b77 0, rgba(30, 75, 119, .3) 23%, transparent 48%), #09172a; }
+html[data-theme="dark"] .phone-gif { content: url("telefonos-conectados-dark.gif"); }
 html[data-theme="dark"] .hero::before, html[data-theme="dark"] .hero::after { border-color: rgba(161, 199, 235, .18); }
 html[data-theme="dark"] .mark { filter: none; }
 html[data-theme="dark"] .nav-links a, html[data-theme="dark"] .brand { color: #edf4fa; }
