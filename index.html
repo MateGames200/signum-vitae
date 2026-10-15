@@ -3,62 +3,127 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Signum Vitae: señal de vida en situaciones de emergencia." />
-    <title>Signum Vitae | EXPOTEC</title>
+    <meta name="theme-color" content="#f1f6f8" />
+    <meta name="description" content="Signum Vitae es una aplicación Android para intercambiar mensajes entre teléfonos cercanos, incluso sin Internet ni red celular." />
+    <title>Signum Vitae — La comunicación sigue</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="logo.css" />
     <link rel="stylesheet" href="theme.css" />
     <link rel="stylesheet" href="interactions.css" />
   </head>
   <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <div class="scroll-progress" aria-hidden="true"><span></span></div>
-    <header class="hero" id="inicio">
+    <header class="site-header" id="inicio">
       <nav class="nav container" aria-label="Navegación principal">
-        <a class="brand" href="#inicio"><span>⌁</span> SIGNUM VITAE</a>
-        <button class="menu-button" aria-label="Abrir menú" aria-expanded="false">☰</button>
-        <div class="nav-actions">
-          <div class="nav-links"><a href="#que-hacemos">Qué hacemos</a><a href="#quienes-somos">Quiénes somos</a></div>
-          <div class="theme-switch" role="group" aria-label="Elegir apariencia del sitio">
-            <button class="theme-button is-active" type="button" data-theme-choice="light" aria-label="Activar modo claro" title="Modo claro">☀</button>
-            <button class="theme-button" type="button" data-theme-choice="dark" aria-label="Activar modo oscuro" title="Modo oscuro">☾</button>
+        <a class="brand" href="#inicio" aria-label="Signum Vitae, inicio">
+          <span class="brand-icon"><img class="brand-logo" src="assets/signum-vitae-logo-256.png" alt="" /></span><span>SIGNUM VITAE</span>
+        </a>
+        <button class="menu-button" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-actions">
+          <span></span><span></span>
+        </button>
+        <div class="nav-actions" id="mobile-actions">
+          <div class="nav-links" id="nav-links">
+            <a href="#proyecto">El proyecto</a><a href="#privacidad">Privacidad y SOS</a><a href="#equipo">El equipo</a>
+          </div>
+          <div class="theme-switch" role="group" aria-label="Apariencia del sitio">
+            <button class="theme-button is-active" type="button" data-theme-choice="light" aria-label="Activar modo claro" aria-pressed="true" title="Modo claro">☼</button>
+            <button class="theme-button" type="button" data-theme-choice="dark" aria-label="Activar modo oscuro" aria-pressed="false" title="Modo oscuro">◐</button>
           </div>
         </div>
       </nav>
-      <div class="hero-content container">
-        <img class="mark" src="signum-vitae-logo-transparent.png" alt="Logotipo de Signum Vitae" />
-        <p class="eyebrow">EXPOTEC 2026 · ÁREA DE TECNOLOGÍA</p>
-        <p class="intro">Comunicación local cuando estar conectados es más importante que nunca.</p>
-        <img class="phone-gif" src="telefonos-conectados.gif" alt="Dos teléfonos intercambiando datos de forma inalámbrica" />
-        <a class="button" href="#que-hacemos">Conocé el proyecto <span>↓</span></a>
-      </div>
     </header>
 
-    <main>
-      <section class="what-we-do section" id="que-hacemos">
-        <div class="container what-layout">
-          <div><p class="eyebrow">QUÉ HACEMOS</p><h2>Una señal que puede<br />seguir avanzando.</h2></div>
-          <div class="what-copy"><p class="lead">Desarrollamos una aplicación Android que permite intercambiar mensajes entre teléfonos cercanos sin Internet, Wi‑Fi ni red celular.</p><p>Signum Vitae utiliza Bluetooth Low Energy para crear una red local: cada dispositivo puede guardar un mensaje y ayudar a reenviarlo hasta acercarlo a su destino.</p><div class="features"><span>BLUETOOTH LE</span><span>SIN INTERNET</span><span>RED LOCAL</span></div></div>
+    <main id="contenido" tabindex="-1">
+      <section class="hero" aria-labelledby="hero-title">
+        <svg class="node-field" data-node-field aria-hidden="true" focusable="false"></svg>
+        <div class="hero-layout container">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> EXPOTEC 2026 <span class="eyebrow-divider">/</span> TECNOLOGÍA PARA ESTAR CERCA</p>
+            <h1 id="hero-title">Cuando no hay señal,<br /><span>la comunicación sigue.</span></h1>
+            <p class="intro">Anyway conecta teléfonos cercanos para intercambiar mensajes por Bluetooth y una red local, incluso sin Internet.</p>
+            <div class="hero-actions">
+              <a class="button" href="anyway-release-v37.apk" download="Anyway-1.18.0-v37.apk">Probar Anyway <span aria-hidden="true">↓</span></a>
+              <a class="text-link" href="#proyecto">Ver cómo funciona <span aria-hidden="true">→</span></a>
+            </div>
+            <p class="hero-version">ACCESO ANTICIPADO <span>·</span> ANDROID <span>·</span> V1.18.0 / 37</p>
+          </div>
+          <div class="hero-product" role="group" aria-label="Vistas reales de la aplicación Anyway">
+            <div class="product-orbit orbit-one" aria-hidden="true"></div><div class="product-orbit orbit-two" aria-hidden="true"></div>
+            <figure class="phone-device phone-left"><img src="assets/anyway/cerca.png" alt="Anyway muestra dos teléfonos conectados directamente por Bluetooth" loading="eager" fetchpriority="low" /></figure>
+            <figure class="phone-device phone-center"><img src="assets/anyway/chats.png" alt="Pantalla de chats de Anyway con el estado de la red local" fetchpriority="high" /></figure>
+            <figure class="phone-device phone-right"><img src="assets/anyway/emergencia.png" alt="Pantalla de emergencia de Anyway con aviso de seguridad y opción para pedir ayuda" loading="eager" fetchpriority="low" /></figure>
+            <span class="product-tag tag-network"><span></span> RED LOCAL</span>
+            <span class="product-tag tag-private">CIFRADO E2E</span>
+          </div>
+        </div>
+        <div class="hero-foot container"><span>MENSAJES ENTRE TELÉFONOS CERCANOS</span><a href="#proyecto" aria-label="Desplazarse a la sección El proyecto">Explorá el proyecto <span aria-hidden="true">↓</span></a></div>
+      </section>
+
+      <section class="project section" id="proyecto" aria-labelledby="project-title">
+        <svg class="node-field" data-node-field aria-hidden="true" focusable="false"></svg>
+        <div class="container">
+          <div class="section-kicker"><span>01</span><span>EL PROYECTO</span></div>
+          <div class="project-layout">
+            <h2 id="project-title">Una señal que<br /><span>siempre busca</span><br />llegar.</h2>
+            <div class="project-copy">
+              <p class="lead">Signum Vitae es una aplicación Android que permite intercambiar mensajes entre teléfonos cercanos sin depender de Internet.</p>
+              <p>Con Bluetooth Low Energy, cada dispositivo puede recibir y guardar un mensaje para ayudar a acercarlo a su destino. Así, los teléfonos próximos forman una red local que sigue funcionando cuando la infraestructura habitual no está disponible.</p>
+              <div class="feature-list" aria-label="Características del proyecto">
+                <span><b>01</b> Bluetooth Low Energy</span><span><b>02</b> Sin Internet</span><span><b>03</b> Red entre dispositivos</span>
+              </div>
+            </div>
+          </div>
+          <div class="flow-heading"><div><p class="eyebrow">ASÍ FUNCIONA</p><h3>Un mensaje. Varios saltos.</h3></div><p>Cada teléfono cercano puede ayudar a que el mensaje avance hasta su destino.</p></div>
+          <div class="flow-card" role="list" aria-label="Pasos de entrega de un mensaje">
+            <article class="flow-step" role="listitem"><span class="flow-icon" aria-hidden="true">01</span><h4>Lo enviás</h4><p>Escribís el mensaje en Anyway, aunque no haya conexión a Internet.</p></article>
+            <article class="flow-step" role="listitem"><span class="flow-icon" aria-hidden="true">02</span><h4>Un teléfono lo recibe</h4><p>Los dispositivos cercanos pueden guardar el mensaje y llevarlo.</p></article>
+            <article class="flow-step" role="listitem"><span class="flow-icon" aria-hidden="true">03</span><h4>La red lo acerca</h4><p>Cuando aparece otro enlace, el mensaje puede seguir avanzando.</p></article>
+          </div>
+          <section class="trust-panel" id="privacidad" aria-labelledby="trust-title">
+            <div class="trust-intro"><p class="eyebrow">TRANSPARENCIA</p><h3 id="trust-title">Conocé los límites y cuidá tus datos.</h3></div>
+            <div class="trust-points"><p><b>Chats privados</b><span>Van cifrados de extremo a extremo; los equipos intermedios no pueden leerlos.</span></p><p><b>SOS público</b><span>El texto y la ubicación que adjuntes pueden ser vistos por otros dispositivos de la red.</span></p></div>
+            <p class="safety-note"><span aria-hidden="true">!</span><span>Anyway no reemplaza al 911 ni garantiza la entrega: depende de que haya teléfonos o relays cerca.</span></p>
+          </section>
+          <aside class="early-access" aria-labelledby="early-access-title">
+            <div class="early-access-copy">
+              <p class="early-access-kicker"><span></span> ACCESO ANTICIPADO · ANDROID</p>
+              <h3 id="early-access-title">Probá Anyway.</h3>
+              <p>Conocé la aplicación detrás de esta idea. Descargá la versión de acceso anticipado para Android.</p>
+              <span class="apk-meta">APK · VERSIÓN 1.18.0 · BUILD 37 · ANDROID</span>
+            </div>
+            <a class="download-button" href="anyway-release-v37.apk" download="Anyway-acceso-anticipado-v37.apk">Descargar Anyway <span aria-hidden="true">↓</span></a>
+          </aside>
         </div>
       </section>
 
-      <section class="about section" id="quienes-somos">
-        <div class="container"><p class="eyebrow dark">QUIÉNES SOMOS</p><div class="heading"><h2>Un equipo que imagina<br />soluciones que conectan.</h2><p>Somos estudiantes que desarrollamos tecnología pensada para ayudar a las personas a mantenerse comunicadas durante una emergencia.</p></div>
-          <div class="team-grid">
-            <article><div class="portrait"><img src="team-mateo-ceballos.png" alt="Mateo Ceballos" /></div><h3>Mateo<br />Ceballos</h3></article>
-            <article><div class="portrait"><img src="team-juan-cruz-pelliza.png" alt="Juan Cruz Pelliza" /></div><h3>Juan Cruz<br />Pelliza</h3></article>
-            <article><div class="portrait"><img src="team-braian-sotomayor.png" alt="Braian Sotomayor" /></div><h3>Braian<br />Sotomayor</h3></article>
-            <article><div class="portrait"><img src="team-sofia-menem.png" alt="Sofía Menem" /></div><h3>Sofía<br />Menem</h3></article>
-            <article><div class="portrait"><img src="team-gonzalo-van-muylem.png" alt="Gonzalo Van Muylem" /></div><h3>Gonzalo Van<br />Muylem</h3></article>
-            <article><div class="portrait"><img src="team-santino-diaz-musso.png" alt="Santino Díaz Musso" /></div><h3>Santino Díaz<br />Musso</h3></article>
+      <section class="team section" id="equipo" aria-labelledby="team-title">
+        <svg class="node-field" data-node-field aria-hidden="true" focusable="false"></svg>
+        <div class="container">
+          <div class="section-kicker"><span>02</span><span>QUIÉNES SOMOS</span></div>
+          <div class="team-heading">
+            <h2 id="team-title">Personas conectadas<br /><span>por una idea.</span></h2>
+            <p>Somos estudiantes que imaginamos y desarrollamos tecnología para ayudar a las personas a mantenerse comunicadas durante una emergencia.</p>
           </div>
-          <p class="photo-note">Equipo de investigación de Signum Vitae.</p>
+          <div class="team-grid">
+            <article class="team-card"><div class="portrait"><img src="assets/team/mateo-ceballos.jpg" alt="" loading="lazy" /></div><h3>Mateo Ceballos</h3></article>
+            <article class="team-card"><div class="portrait"><img src="assets/team/juan-cruz-pelliza.jpg" alt="" loading="lazy" /></div><h3>Juan Cruz Pelliza</h3></article>
+            <article class="team-card"><div class="portrait"><img src="assets/team/braian-sotomayor.jpg" alt="" loading="lazy" /></div><h3>Braian Sotomayor</h3></article>
+            <article class="team-card"><div class="portrait"><img src="assets/team/sofia-menem.jpg" alt="" loading="lazy" /></div><h3>Sofía Menem</h3></article>
+            <article class="team-card"><div class="portrait"><img src="assets/team/gonzalo-van-muylem.jpg" alt="" loading="lazy" /></div><h3>Gonzalo Van Muylem</h3></article>
+            <article class="team-card"><div class="portrait"><img src="assets/team/santino-diaz-musso.jpg" alt="" loading="lazy" /></div><h3>Santino Díaz Musso</h3></article>
+          </div>
+          <p class="photo-note">Equipo de investigación · Signum Vitae · EXPOTEC 2026</p>
         </div>
       </section>
     </main>
-    <footer><div class="container"><a class="brand" href="#inicio"><span>⌁</span> SIGNUM VITAE</a><p>EXPOTEC · 2026</p><a href="#inicio">Volver arriba ↑</a></div></footer>
+
+    <footer class="site-footer">
+      <div class="container footer-main"><a class="brand" href="#inicio"><span class="brand-icon"><img class="brand-logo" src="assets/signum-vitae-logo-256.png" alt="" /></span><span>SIGNUM VITAE</span></a><p>Una señal de vida, incluso sin señal.</p><a class="back-top" href="#inicio">Volver al inicio <span aria-hidden="true">↑</span></a></div>
+      <div class="container footer-bottom"><span>EXPOTEC 2026 · ÁREA DE TECNOLOGÍA</span><a href="#inicio" aria-label="Inicio de página">SV®</a></div>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>

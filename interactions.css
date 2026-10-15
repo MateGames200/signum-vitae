@@ -1,25 +1,46 @@
-.scroll-progress { position: fixed; inset: 0 0 auto; z-index: 20; height: 3px; background: transparent; pointer-events: none; }
-.scroll-progress span { display: block; width: 0; height: 100%; background: var(--orange); box-shadow: 0 0 12px rgba(255, 134, 37, .7); transition: width .1s linear; }
-
-.nav-links a { position: relative; transition: color .2s ease; }
-.nav-links a::after { content: ""; position: absolute; right: 0; bottom: -8px; left: 0; height: 2px; background: var(--orange); transform: scaleX(0); transform-origin: right; transition: transform .24s ease; }
+.nav-links a { position: relative; }
+.nav-links a::after {
+  position: absolute;
+  right: 0;
+  bottom: 5px;
+  left: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--orange);
+  content: '';
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .22s ease;
+}
 .nav-links a:hover::after, .nav-links a.is-current::after { transform: scaleX(1); transform-origin: left; }
-.nav-links a.is-current { color: var(--orange); }
-
-.button, .theme-button, .portrait, .features span { transition: transform .22s ease, box-shadow .22s ease, background-color .22s ease, color .22s ease; }
-.button:hover { transform: translateY(-3px); box-shadow: 0 11px 22px rgba(11, 50, 104, .2); }
-.theme-button:active, .button:active { transform: scale(.94); }
-.team-grid article { transition: transform .25s ease; }
-.team-grid article:hover { transform: translateY(-7px); }
-.team-grid article:hover .portrait { box-shadow: 0 10px 22px rgba(11, 50, 104, .18), inset 0 0 0 8px var(--cream), inset 0 0 0 9px var(--orange); }
-.features span:hover { transform: translateY(-3px); background: rgba(255, 134, 37, .12); }
-
-.js-enabled .reveal { opacity: 0; transform: translateY(24px); transition: opacity .65s ease, transform .65s cubic-bezier(.2, .72, .25, 1); }
+.theme-button, .team-card, .button, .download-button { transition: background-color .2s ease, color .2s ease, transform .2s ease, box-shadow .2s ease, filter .2s ease; }
+.theme-button:hover:not(.is-active) { background: var(--surface-soft); }
+.theme-button:active { transform: scale(.92); }
+.team-card:hover { transform: translateY(-3px); }
+.hero-product { animation: stage-enter .8s cubic-bezier(.2, .72, .25, 1) both; }
+.phone-left, .phone-right { animation: phone-float 6s ease-in-out infinite; }
+.phone-right { animation-delay: -2.7s; }
+.phone-center { animation: phone-center-enter .9s .12s cubic-bezier(.2, .72, .25, 1) both; }
+.js-enabled .reveal { opacity: 0; transform: translateY(20px); transition: opacity .65s ease, transform .65s cubic-bezier(.2, .72, .25, 1); }
 .js-enabled .reveal.is-visible { opacity: 1; transform: translateY(0); }
+.js-enabled .flow-step.reveal { transition-delay: var(--reveal-delay, 0ms); }
 
-html[data-theme="dark"] .team-grid article:hover .portrait { box-shadow: 0 10px 24px rgba(0, 0, 0, .36), inset 0 0 0 8px #132b47, inset 0 0 0 9px var(--orange); }
+@keyframes stage-enter {
+  from { opacity: 0; transform: translateY(12px) scale(.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes phone-float {
+  0%, 100% { margin-top: 0; }
+  50% { margin-top: -7px; }
+}
+@keyframes phone-center-enter {
+  from { opacity: 0; translate: 0 10px; }
+  to { opacity: 1; translate: 0 0; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
   .js-enabled .reveal { opacity: 1; transform: none; }
+  .phone-left, .phone-right, .phone-center, .hero-product { animation: none; }
+  .node-field .connection, .node-field .node-halo, .node-field .node-core { transition: none; }
 }
