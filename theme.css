@@ -27,6 +27,13 @@ html[data-theme="dark"] .about { background: var(--light-blue); }
 html[data-theme="dark"] .heading p, html[data-theme="dark"] .photo-note { color: var(--muted); }
 html[data-theme="dark"] .portrait { background: #132b47; border-color: #87a8c8; box-shadow: inset 0 0 0 8px #132b47, inset 0 0 0 9px var(--orange); }
 html[data-theme="dark"] .team-grid h3 { color: #edf4fa; }
+html[data-theme="dark"] .download { background: linear-gradient(125deg, #0d2138 0%, #09172a 48%, #162c47 100%); }
+html[data-theme="dark"] .download-card { border-color: rgba(161, 199, 235, .2); background: rgba(16, 36, 61, .72); box-shadow: 0 22px 55px rgba(0, 0, 0, .24); }
+html[data-theme="dark"] .download-copy h2 { color: #edf4fa; }
+html[data-theme="dark"] .download-copy > p:not(.eyebrow):not(.install-note), html[data-theme="dark"] .install-note { color: var(--muted); }
+html[data-theme="dark"] .apk-phone { background: #10243d; border-color: #a1c7eb; box-shadow: 0 12px 24px rgba(0, 0, 0, .3); }
+html[data-theme="dark"] .apk-phone::before { background: #a1c7eb; }
+html[data-theme="dark"] .apk-phone b { box-shadow: 0 0 0 6px #10243d; }
 html[data-theme="dark"] footer { background: #06101c; }
 
 @media (max-width: 660px) {
